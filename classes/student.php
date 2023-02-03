@@ -38,4 +38,13 @@ class Student {
         return $result;
     }
 
+//    for delete page
+    public function delete_student($student_id) {
+        $sql = "DELETE FROM tbl_student WHERE student_id='$student_id'";
+        mysqli_query($this->conn, $sql);
+
+//       delete er por abar veiw page e return er jonno
+        header("Location:view_student.php");
+    }
+
 }
