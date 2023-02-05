@@ -47,11 +47,20 @@ class Student {
         header("Location:view_student.php");
     }
 
-//      for edit page
+    // for edit page
+    // to show in edit page
     public function select_student_info_by_id($student_id) {
         $sql = "SELECT * FROM tbl_student WHERE student_id='$student_id'";
         $result = mysqli_query($this->conn, $sql);
         return $result;
+    }
+
+    // to update data in edit page
+    public function update_student($data) {
+        $sql = "UPDATE tbl_student SET student_name='$data[student_name]', email_address='$data[email_address]',mobile_number='$data[mobile_number]' WHERE student_id='$data[student_id]'";
+        mysqli_query($this->conn, $sql);
+//        return to view page
+        header("Location:view_student.php");
     }
 
 }

@@ -11,6 +11,10 @@ $student_info = mysqli_fetch_assoc($result);
   print_r($student_info);
   exit();
  */
+
+if (isset($_POST['btn'])) {
+    $obj->update_student($_POST);
+}
 ?>
 <html>
     <head>
@@ -39,6 +43,7 @@ $student_info = mysqli_fetch_assoc($result);
                                 <td>Student Name</td>
                                 <td>
                                     <input type="text" name="student_name" value="<?php echo $student_info['student_name'] ?>">
+                                    <input type="hidden" name="student_id" value="<?php echo $student_info['student_id'] ?>">
                                 </td>
                             </tr>
                             <tr>
