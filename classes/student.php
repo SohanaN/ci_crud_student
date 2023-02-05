@@ -47,4 +47,11 @@ class Student {
         header("Location:view_student.php");
     }
 
+//      for edit page
+    public function select_student_info_by_id($student_id) {
+        $sql = "SELECT * FROM tbl_student WHERE student_id='$student_id'";
+        $result = mysqli_query($this->conn, $sql);
+        return $result;
+    }
+
 }

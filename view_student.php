@@ -43,7 +43,7 @@ $result = $obj->select_all_student();
                                 <td><?php echo $row['email_address'] ?></td>
                                 <td><?php echo $row['mobile_number'] ?></td>
                                 <td>
-                                    <a href="">Edit</a> |
+                                    <a href="edit.php?id=<?php echo $row['student_id'] ?>">Edit</a> |
                                     <a href="delete.php?id=<?php echo $row['student_id'] ?>">Delete</a>
                                 </td>
                             </tr>
